@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News & Newsroom - Miss Sankofa Beauty Pageant</title>
+  <meta name="description" content="The latest news, press coverage, and information about Miss Sankofa Beauty Pageant and its Voice for Children initiative." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --green: #2E8B57;
+      --green-dark: #1e6040;
+      --green-deep: #1f3d2b;
+      --green-light: #e8f5ee;
+      --green-mid: #246b45;
+      --gold: #D4A574;
+      --off-white: #f9f9f6;
+      --text: #222222;
+      --text-light: #666;
+      --border: rgba(46, 139, 87, 0.15);
+      --shadow: 0 2px 20px rgba(0,0,0,0.07);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: #fff;
+      box-shadow: var(--shadow);
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.8rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+      color: var(--green);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+      padding: 0.4rem 0.6rem;
+      border-radius: 3px;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: background 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--green-light);
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background-color: var(--green) !important;
+      color: var(--white) !important;
+      padding: 0.45rem 0.9rem;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: clamp(0.65rem, 1vw, 0.75rem);
+      display: inline-block;
+      transition: background 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .btn-primary:hover { background-color: var(--green-dark) !important; text-decoration: none; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 22px;
+      height: 16px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1100;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .hamburger span {
+      height: 1.5px;
+      width: 100%;
+      background-color: var(--green);
+      border-radius: 1px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 240px;
+        padding: 1rem;
+        box-shadow: -2px 4px 16px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+        pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      .hamburger.open span:nth-child(1) { transform: rotate(45deg) translateY(7px); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translateY(-7px); }
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      max-width: 1200px;
+      margin: clamp(60px, 8vw, 80px) auto 0;
+      padding: 0 clamp(12px, 3vw, 24px) clamp(40px, 6vw, 80px);
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      position: relative;
+      width: 100%;
+      height: clamp(240px, 55vh, 450px);
+      background: url("pictures/crowning1.jfif") center 25%/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      margin: clamp(16px, 3vw, 30px) 0 clamp(40px, 6vw, 70px);
+      border-radius: 12px;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .hero-overlay {
+      width: 100%;
+      padding: clamp(20px, 4vw, 50px) clamp(16px, 4vw, 48px);
+      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.35) 60%, transparent 100%);
+      color: #fff;
+    }
+
+    .hero-eyebrow {
+      font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: clamp(8px, 1.5vw, 12px);
+    }
+
+    .hero-overlay h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: clamp(8px, 1.5vw, 12px);
+      letter-spacing: 0.5px;
+    }
+
+    .hero-overlay p {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      max-width: 500px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== STATS ROW ===== */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: clamp(40px, 6vw, 70px);
+      animation: fadeUp 0.5s ease both;
+      animation-delay: 0.1s;
+      opacity: 0;
+      max-width: 100%;
+    }
+
+    .stat-item {
+      background: #fff;
+      padding: clamp(16px, 2.5vw, 28px) clamp(12px, 2vw, 20px);
+      text-align: center;
+      min-width: 100px;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: clamp(4px, 1vw, 6px);
+    }
+
+    .stat-label {
+      font-size: clamp(0.6rem, 1vw, 0.72rem);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      line-height: 1.3;
+    }
+
+    /* ===== FOOTER ===== */
+    .main-footer {
+      background: var(--green-deep);
+      color: var(--white);
+      padding: clamp(32px, 5vw, 48px) clamp(12px, 3vw, 1.5rem) clamp(16px, 2vw, 20px);
+      margin-top: auto;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(0.6rem, 1.5vw, 1rem);
+      margin-bottom: clamp(20px, 3vw, 32px);
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      color: rgba(255,255,255,0.7);
+      font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .social-icons a:hover {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+      text-decoration: none;
+    }
+    .social-icons a svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      display: block;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: clamp(16px, 3vw, 24px);
+      padding: 0 clamp(12px, 3vw, 1.5rem);
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-column h3 {
+      font-family: 'Cormorant Garamond', serif;
+      margin-bottom: clamp(0.6rem, 1.5vw, 0.8rem);
+      color: var(--gold);
+      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+      letter-spacing: 0.5px;
+    }
+
+    .footer-column p,
+    .footer-column li {
+      margin-bottom: 0.4rem;
+      font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+
+    .footer-column ul { list-style: none; padding: 0; }
+
+    .footer-column a {
+      color: rgba(255,255,255,0.75);
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover { color: var(--gold); text-decoration: none; }
+    .footer-column i { margin-right: 6px; color: var(--gold); font-size: clamp(0.7rem, 1.2vw, 0.8rem); }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: clamp(20px, 3vw, 32px);
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+      padding-left: clamp(12px, 3vw, 1.5rem);
+      padding-right: clamp(12px, 3vw, 1.5rem);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+/* ══ SECTION HEADER ══ */
+    .section-header {
+      max-width: 1100px;
+      margin: 0 auto clamp(24px, 4vw, 36px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      gap: 20px;
+      padding: 0 clamp(12px, 3vw, 1.5rem) clamp(12px, 2vw, 16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .section-eyebrow {
+      font-size: clamp(0.62rem, 1.2vw, 0.7rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin: 0;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    /* ══ CATEGORY PILLS ══ */
+    .category-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto clamp(28px, 4vw, 40px);
+      padding: 0 clamp(12px, 3vw, 1.5rem);
+    }
+
+    .pill {
+      padding: 7px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-light);
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .pill.active, .pill:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    /* ══ FEATURED STORY ══ */
+    .featured-story {
+      max-width: 1100px;
+      margin: 0 auto clamp(40px, 6vw, 56px);
+      padding: 0 clamp(12px, 3vw, 1.5rem);
+    }
+
+    .featured-story-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: var(--green-deep);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 800px) {
+      .featured-story-inner { grid-template-columns: 1.1fr 1fr; }
+    }
+
+    .featured-img {
+      position: relative;
+      min-height: 220px;
+      background: var(--green-dark);
+    }
+
+    .featured-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 !important;
+    }
+
+    .featured-body {
+      padding: clamp(24px, 4vw, 44px);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .featured-tag {
+      display: inline-block;
+      width: fit-content;
+      background: var(--green);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .featured-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .featured-body p {
+      color: rgba(255,255,255,0.8);
+      font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .featured-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      width: fit-content;
+      border-bottom: 2px solid var(--green);
+      padding-bottom: 3px;
+      text-decoration: none;
+    }
+
+    .featured-link:hover { text-decoration: none; color: #fff; }
+
+    /* ══ NEWS GRID ══ */
+    .news-grid-wrap {
+      max-width: 1100px;
+      margin: 0 auto clamp(48px, 7vw, 72px);
+      padding: 0 clamp(12px, 3vw, 1.5rem);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(20px, 3vw, 28px);
+    }
+
+    @media (min-width: 700px) {
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1000px) {
+      .news-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .news-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+      padding: 0;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      text-decoration: none;
+    }
+
+    .news-card-img {
+      position: relative;
+      height: 170px;
+      background: var(--green-light);
+    }
+
+    .news-card-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 !important;
+    }
+
+    .news-card-body {
+      padding: clamp(16px, 2.5vw, 20px);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .news-card-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .news-card-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .news-card-body p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      font-weight: 300;
+      flex: 1;
+      margin: 0;
+    }
+
+    .news-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-top: 4px;
+    }
+
+    .news-card-link .arrow { display: inline-flex; transition: transform 0.25s ease; }
+    .news-card:hover .news-card-link .arrow { transform: translateX(3px); }
+
+    /* ══ ORGANIZATION BAND ══ */
+    .org-band {
+      background: var(--green-light);
+      padding: clamp(40px, 6vw, 64px) clamp(12px, 3vw, 1.5rem);
+      margin-bottom: clamp(40px, 6vw, 64px);
+    }
+
+    .org-band-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(28px, 4vw, 40px);
+      align-items: start;
+    }
+
+    @media (min-width: 900px) {
+      .org-band-inner { grid-template-columns: 1.3fr 1fr; }
+    }
+
+    .org-copy h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--text);
+      margin: 8px 0 14px;
+      line-height: 1.2;
+    }
+
+    .org-copy p {
+      font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+      color: #444;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+
+    .fact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .fact-chip {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .fact-chip i { color: var(--green); }
+
+    .press-panel {
+      background: #fff;
+      border-radius: 12px;
+      padding: clamp(24px, 3vw, 32px);
+      box-shadow: var(--shadow-card);
+      height: fit-content;
+    }
+
+    .press-panel h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .press-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .press-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      margin-top: 1px;
+    }
+
+    .press-row strong {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .press-row span { font-size: 0.8rem; color: var(--text-light); }
+
+    .press-cta-btn {
+      display: block;
+      text-align: center;
+      background: var(--green);
+      color: #fff !important;
+      padding: 11px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s ease;
+      margin-top: 4px;
+    }
+
+    .press-cta-btn:hover { background: var(--green-dark); text-decoration: none; }
+
+    /* ══ CLOSING CTA BANNER ══ */
+    .news-cta-banner {
+      max-width: 1100px;
+      margin: 0 auto clamp(40px, 6vw, 64px);
+      padding: 0 clamp(12px, 3vw, 1.5rem);
+    }
+
+    .news-cta-inner {
+      background: var(--green);
+      border-radius: 14px;
+      padding: clamp(28px, 5vw, 48px);
+      text-align: center;
+      color: #fff;
+    }
+
+    .news-cta-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      margin-bottom: 10px;
+    }
+
+    .news-cta-inner p {
+      font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 20px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .news-cta-inner .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--green) !important;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .news-cta-inner .cta-btn:hover { background: var(--green-light); text-decoration: none; }
+
+    /* ══ NEWS DETAIL MODAL ══ */
+    .news-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 30, 24, 0.6);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(12px, 3vw, 24px);
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .news-modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .news-modal {
+      background: #fff;
+      border-radius: 14px;
+      max-width: 640px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.25s ease;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    .news-modal-overlay.open .news-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .news-modal-img {
+      position: relative;
+      height: clamp(160px, 30vw, 240px);
+      background: var(--green-light);
+      border-radius: 14px 14px 0 0;
+      overflow: hidden;
+    }
+
+    .news-modal-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .news-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      z-index: 2;
+      transition: background 0.2s ease;
+    }
+
+    .news-modal-close:hover { background: rgba(0,0,0,0.7); }
+
+    .news-modal-body {
+      padding: clamp(20px, 4vw, 34px);
+    }
+
+    .news-modal-tag {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .news-modal-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .news-modal-body p {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+
+    .news-modal-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .news-modal-body ul li {
+      font-size: 0.85rem;
+      color: #444;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .news-modal-body ul li i {
+      color: var(--green);
+      margin-top: 4px;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .news-modal-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .news-modal-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green);
+      color: #fff !important;
+      padding: 11px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s ease;
+    }
+
+    .news-modal-cta:hover { background: var(--green-dark); text-decoration: none; }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo" aria-label="Miss Sankofa Beauty Pageant — Home">
+      <img src="pictures/MISS SANKOFA LOGO.jpg" alt="Miss Sankofa Logo" class="logo-img" />
+      <span class="logo-text">Miss Sankofa</span>
+    </a>
+
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-navigation" class="nav-links" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="vision.html">Vision</a>
+      <a href="organizers.html">About Us</a>
+      <a href="news.html">News</a>
+      <a href="form.html" class="btn-primary">Pick A Form</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-overlay">
+      <p class="hero-eyebrow">Miss Sankofa Beauty Pageant</p>
+      <h1>News & Newsroom</h1>
+      <p>The latest headlines, press coverage, and information about our organization</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-row" aria-label="Organization facts">
+    <div class="stat-item">
+      <div class="stat-number">2016</div>
+      <div class="stat-label">Founded</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">10+</div>
+      <div class="stat-label">Editions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2022</div>
+      <div class="stat-label">Voice Launched</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">100+</div>
+      <div class="stat-label">Lives Impacted</div>
+    </div>
+  </div>
+
+  <!-- CATEGORY PILLS -->
+  <div class="category-pills" role="tablist" aria-label="Filter news by category">
+    <button class="pill active" type="button">All</button>
+    <button class="pill" type="button">Pageant</button>
+    <button class="pill" type="button">Community</button>
+    <button class="pill" type="button">Impact</button>
+  </div>
+
+  <!-- FEATURED STORY -->
+  <section class="featured-story" aria-label="Featured story">
+    <div class="featured-story-inner">
+      <div class="featured-img">
+        <img src="pictures/crowning 2.jfif" alt="Miss Sankofa 2026 crowning ceremony" />
+      </div>
+      <div class="featured-body">
+        <span class="featured-tag">Pageant</span>
+        <h2>Miss Sankofa 2026 Crowned</h2>
+        <p>Matina Agathony was crowned in a spectacular ceremony in Donkro Nkwanta, celebrating beauty, culture, and a new chapter of leadership for the pageant.</p>
+        <a href="https://www.modernghana.com/entertainment/82684/matina-agathony-crowned-miss-sankofa-2026.html" target="_blank" rel="noopener noreferrer" class="featured-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS GRID -->
+  <section class="news-grid-wrap" aria-labelledby="news-heading">
+    <div class="section-header">
+      <div class="section-header-left">
+        <span class="section-eyebrow">Newsroom</span>
+        <h2 class="section-title" id="news-heading">More Stories</h2>
+      </div>
+    </div>
+
+    <div class="news-grid">
+      <button type="button" class="news-card" data-category="Community" data-modal="voice">
+        <div class="news-card-img">
+          <img src="pictures/news 1.jpeg" alt="Voice for Children Initiative" />
+        </div>
+        <div class="news-card-body">
+          <span class="news-card-tag">Community</span>
+          <h3>Voice for Children</h3>
+          <p>Our flagship advocacy initiative continues to reach schools and families across the region with education and support.</p>
+          <span class="news-card-link">Read More <span class="arrow"><i class="fas fa-arrow-right"></i></span></span>
+        </div>
+      </button>
+
+      <button type="button" class="news-card" data-category="Impact" data-modal="cleanup">
+        <div class="news-card-img">
+          <img src="pictures/news 2.jpeg" alt="Community clean-up event" />
+        </div>
+        <div class="news-card-body">
+          <span class="news-card-tag">Impact</span>
+          <h3>Clean-Up Drive</h3>
+          <p>Contestants led a community clean-up drive, rallying volunteers around a shared commitment to civic pride.</p>
+          <span class="news-card-link">Read More <span class="arrow"><i class="fas fa-arrow-right"></i></span></span>
+        </div>
+      </button>
+
+      <button type="button" class="news-card" data-category="Pageant" data-modal="applications">
+        <div class="news-card-img">
+          <img src="pictures/allcontestant.jpeg" alt="Miss Sankofa applications open" />
+        </div>
+        <div class="news-card-body">
+          <span class="news-card-tag">Pageant</span>
+          <h3>Applications Open for 2027</h3>
+          <p>Registration for the next edition of Miss Sankofa is now open. Step onto the stage and become a change agent.</p>
+          <span class="news-card-link">Read More <span class="arrow"><i class="fas fa-arrow-right"></i></span></span>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ORGANIZATION BAND -->
+  <section class="org-band" aria-labelledby="org-heading">
+    <div class="org-band-inner">
+      <div class="org-copy">
+        <span class="section-eyebrow">About Us</span>
+        <h2 id="org-heading">The Organization Behind Miss Sankofa</h2>
+        <p>Miss Sankofa is the flagship cultural and empowerment organization behind Donkro Nkwanta's most celebrated annual event. Since 2016, it has grown from a local celebration into a platform for leadership, advocacy, and youth development across the Bono East Region.</p>
+        <p>Our mission is to identify, train, and empower young women to become cultural ambassadors, community leaders, and change agents — blending Ghanaian tradition with modern leadership, education, and social impact. Since 2022, every queen has championed <strong>Voice for Children</strong>, our advocacy initiative against child abuse.</p>
+        <div class="fact-chips">
+          <span class="fact-chip"><i class="fas fa-flag"></i>Founded 2016</span>
+          <span class="fact-chip"><i class="fas fa-calendar-day"></i>Annual — every 2nd January</span>
+          <span class="fact-chip"><i class="fas fa-map-marker-alt"></i>Donkro Nkwanta, Ghana</span>
+          <span class="fact-chip"><i class="fas fa-hand-holding-heart"></i>Voice for Children</span>
+        </div>
+      </div>
+
+      <div class="press-panel">
+        <h3>Media Inquiries</h3>
+        <div class="press-row">
+          <div class="press-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <strong>Email</strong>
+            <span>misssankofa25@gmail.com</span>
+          </div>
+        </div>
+        <div class="press-row">
+          <div class="press-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <strong>Phone</strong>
+            <span>+233 54 383 4637</span>
+          </div>
+        </div>
+        <div class="press-row">
+          <div class="press-icon"><i class="fas fa-bullhorn"></i></div>
+          <div>
+            <strong>Follow Along</strong>
+            <span>Find our social channels in the footer for live updates</span>
+          </div>
+        </div>
+        <a href="mailto:misssankofa25@gmail.com" class="press-cta-btn">Contact Press Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="news-cta-banner">
+    <div class="news-cta-inner">
+      <h2>Join Miss Sankofa 2026</h2>
+      <p>Applications are open. Become the next change agent for your community.</p>
+      <a href="form.html" class="cta-btn">Apply Now</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- NEWS DETAIL MODALS -->
+<div class="news-modal-overlay" id="modal-voice" aria-hidden="true">
+  <div class="news-modal" role="dialog" aria-modal="true" aria-labelledby="modal-voice-title">
+    <div class="news-modal-img">
+      <button type="button" class="news-modal-close" data-close-modal aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="pictures/news 1.jpeg" alt="Voice for Children Initiative" />
+    </div>
+    <div class="news-modal-body">
+      <span class="news-modal-tag">Community</span>
+      <h2 id="modal-voice-title">Voice for Children</h2>
+      <p>Voice for Children is Miss Sankofa's flagship advocacy initiative, launched in 2022 to raise awareness about and speak out against child abuse in Donkro Nkwanta and the wider Bono East Region. Since its launch, every reigning Miss Sankofa queen has served as an ambassador for the cause, carrying the message into schools, churches, and community gatherings throughout her reign.</p>
+      <p>The initiative focuses on education and prevention — helping children understand their right to safety, and helping parents, teachers, and community members recognize the signs of abuse and know how to respond. It reflects the pageant's broader belief that a queen's platform should extend well beyond the crowning night into real, sustained community impact.</p>
+      <ul>
+        <li><i class="fas fa-check"></i>Launched in 2022 as the pageant's core advocacy platform</li>
+        <li><i class="fas fa-check"></i>Champions education and awareness against child abuse</li>
+        <li><i class="fas fa-check"></i>Carried forward by every Miss Sankofa titleholder during her reign</li>
+        <li><i class="fas fa-check"></i>Engages schools, families, and community groups across the region</li>
+      </ul>
+      <div class="news-modal-cta-group">
+        <a href="https://wa.me/233543834637" target="_blank" rel="noopener noreferrer" class="news-modal-cta"><i class="fab fa-whatsapp"></i>WhatsApp Us</a>
+        <a href="https://ig.me/m/_misssankofa" target="_blank" rel="noopener noreferrer" class="news-modal-cta"><i class="fab fa-instagram"></i>DM on Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="news-modal-overlay" id="modal-cleanup" aria-hidden="true">
+  <div class="news-modal" role="dialog" aria-modal="true" aria-labelledby="modal-cleanup-title">
+    <div class="news-modal-img">
+      <button type="button" class="news-modal-close" data-close-modal aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="pictures/news 2.jpeg" alt="Community clean-up event" />
+    </div>
+    <div class="news-modal-body">
+      <span class="news-modal-tag">Impact</span>
+      <h2 id="modal-cleanup-title">Community Clean-Up Drive</h2>
+      <p>As part of Miss Sankofa's ongoing commitment to civic responsibility, this year's contestants organized and led a community-wide clean-up exercise in Donkro Nkwanta. The initiative brought together residents, local volunteers, and pageant organizers in a shared effort to promote a cleaner, healthier environment for the town.</p>
+      <p>Beyond the physical clean-up, the event served as an opportunity for contestants to engage directly with community members, reinforcing the pageant's broader mission of leadership through service. The drive is part of a growing tradition where every Miss Sankofa cohort is expected to give back to the community that supports them.</p>
+      <ul>
+        <li><i class="fas fa-check"></i>Led by current Miss Sankofa contestants and volunteers</li>
+        <li><i class="fas fa-check"></i>Focused on public spaces and market areas in Donkro Nkwanta</li>
+        <li><i class="fas fa-check"></i>Part of the pageant's wider civic and community impact programming</li>
+      </ul>
+      <div class="news-modal-cta-group">
+        <a href="https://wa.me/233543834637" target="_blank" rel="noopener noreferrer" class="news-modal-cta"><i class="fab fa-whatsapp"></i>WhatsApp Us</a>
+        <a href="https://ig.me/m/_misssankofa" target="_blank" rel="noopener noreferrer" class="news-modal-cta"><i class="fab fa-instagram"></i>DM on Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="news-modal-overlay" id="modal-applications" aria-hidden="true">
+  <div class="news-modal" role="dialog" aria-modal="true" aria-labelledby="modal-applications-title">
+    <div class="news-modal-img">
+      <button type="button" class="news-modal-close" data-close-modal aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="pictures/allcontestant.jpeg" alt="Miss Sankofa applications open" />
+    </div>
+    <div class="news-modal-body">
+      <span class="news-modal-tag">Pageant</span>
+      <h2 id="modal-applications-title">Applications Now Open — Miss Sankofa 2027</h2>
+      <p>Registration for the next edition of Miss Sankofa is officially open. Since 2016, the pageant has trained and empowered young women from the Bono East Region to become cultural ambassadors, community leaders, and advocates for social change — and the search for the next cohort is now underway.</p>
+      <p>Selected contestants join a structured programme that combines cultural education, leadership training, and public speaking development, culminating in the crowning ceremony held every 2nd of January. Every reigning queen also becomes an ambassador for Voice for Children, the pageant's advocacy initiative against child abuse.</p>
+      <ul>
+        <li><i class="fas fa-check"></i>Open to eligible young women from Donkro Nkwanta and the wider region</li>
+        <li><i class="fas fa-check"></i>Includes leadership, cultural, and public speaking training</li>
+        <li><i class="fas fa-check"></i>Crowning ceremony held annually every 2nd January</li>
+        <li><i class="fas fa-check"></i>Winner becomes an ambassador for the Voice for Children initiative</li>
+      </ul>
+      <a href="form.html" class="news-modal-cta">Apply Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+
+    <div class="social-icons">
+      <a href="https://wa.me/+233543834637" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+      <a href="https://www.tiktok.com/@misssankofa_" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="https://www.facebook.com/people/Miss-Sankofa-Beauty-Pageant/100075938831397/?locale=en_GB#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+      <a href="https://www.instagram.com/_misssankofa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+    </div>
+
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="history.html">The Pageant</a></li>
+        <li><a href="organizers.html">Team</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i>misssankofa25@gmail.com</p>
+      <p><i class="fas fa-phone"></i>+233 54 383 4637</p>
+      <p><i class="fab fa-whatsapp"></i>+233 554 007 025</p>
+      <p><i class="fab fa-whatsapp"></i>+233 540 498 922</p>
+    </div>
+    <div class="footer-column">
+      <h3>Location</h3>
+      <p><i class="fas fa-map-marker-alt"></i>P.O. Box 46</p>
+      <p>Donkro Nkwanta, Ghana</p>
+      <a href="https://www.google.com/maps/place/Donkronkwanta/" target="_blank" rel="noopener noreferrer">Map</a>
+    </div>
+    <div class="footer-column">
+      <h3>Links</h3>
+      <ul>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="form.html">Apply</a></li>
+        <li><a href="vision.html">Vision</a></li>
+              <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Miss Sankofa Beauty Pageant. All rights reserved.</p>
+    <p>Designed and developed by Youngster's Web Studios</p>
+  </div>
+
+</footer>
+
+<script>
+
+  // ── Hamburger menu ──────────────────────────────
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.getElementById('primary-navigation');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ── News category filter ────────────────────────
+  const pills = document.querySelectorAll('.pill');
+  const newsCards = document.querySelectorAll('.news-card');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const category = pill.textContent.trim();
+
+      newsCards.forEach(card => {
+        if (category === 'All' || card.dataset.category === category) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // ── News detail modals ──────────────────────────
+  const modalTriggers = document.querySelectorAll('.news-card[data-modal]');
+  let lastFocusedTrigger = null;
+
+  function openModal(id) {
+    const overlay = document.getElementById('modal-' + id);
+    if (!overlay) return;
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(overlay) {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocusedTrigger) lastFocusedTrigger.focus();
+  }
+
+  modalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      lastFocusedTrigger = trigger;
+      openModal(trigger.dataset.modal);
+    });
+  });
+
+  document.querySelectorAll('.news-modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) closeModal(overlay);
+    });
+    overlay.querySelectorAll('[data-close-modal]').forEach(btn => {
+      btn.addEventListener('click', () => closeModal(overlay));
+    });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.news-modal-overlay.open').forEach(closeModal);
+    }
+  });
+
+</script>
+
+</body>
+</html>
