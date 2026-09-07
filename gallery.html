@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miss Sankofa - Gallery</title>
+  <meta name="description" content="View beautiful moments from Miss Sankofa Beauty Pageant over the years." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --green: #2E8B57;
+      --green-dark: #246b45;
+      --green-deep: #1f3d2b;
+      --green-light: #e8f5ee;
+      --gold: #D4A574;
+      --off-white: #f9f9f6;
+      --white: #ffffff;
+      --text: #1a1a1a;
+      --text-light: #666;
+      --border: rgba(46, 139, 87, 0.18);
+      --shadow: 0 2px 20px rgba(0,0,0,0.07);
+      --shadow-card: 0 12px 40px rgba(0,0,0,0.12);
+      --transition: 0.3s ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: var(--white);
+      box-shadow: var(--shadow);
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.8rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+      color: var(--green);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+      padding: 0.4rem 0.6rem;
+      border-radius: 3px;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: background var(--transition), color var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--green-light);
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background-color: var(--green) !important;
+      color: var(--white) !important;
+      padding: 0.45rem 0.9rem;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: clamp(0.65rem, 1vw, 0.75rem);
+      display: inline-block;
+      transition: background var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .btn-primary:hover { background-color: var(--green-dark) !important; text-decoration: none; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 22px;
+      height: 16px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1100;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .hamburger span {
+      height: 1.5px;
+      width: 100%;
+      background-color: var(--green);
+      border-radius: 1px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 240px;
+        padding: 1rem;
+        box-shadow: -2px 4px 16px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+        pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      .hamburger.open span:nth-child(1) { transform: rotate(45deg) translateY(7px); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translateY(-7px); }
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      max-width: 1200px;
+      margin: clamp(60px, 8vw, 80px) auto 0;
+      padding: 0 clamp(12px, 3vw, 24px) clamp(40px, 6vw, 80px);
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    /* ===== HERO ===== */
+    .gallery-hero {
+      position: relative;
+      width: 100%;
+      height: clamp(240px, 60vh, 500px);
+      background: url("pictures/IMG_9245.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      margin: clamp(16px, 3vw, 30px) 0 clamp(40px, 6vw, 60px);
+      border-radius: 12px;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .hero-overlay {
+      width: 100%;
+      padding: clamp(20px, 4vw, 50px) clamp(16px, 4vw, 48px);
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+      color: #fff;
+    }
+
+    .hero-eyebrow {
+      font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: clamp(8px, 1.5vw, 12px);
+    }
+
+    .hero-overlay h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: clamp(8px, 1.5vw, 12px);
+      letter-spacing: 0.5px;
+    }
+
+    .hero-overlay p {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
+      max-width: 500px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== FILTER BAR ===== */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(6px, 1.5vw, 8px);
+      margin-bottom: clamp(32px, 5vw, 50px);
+      flex-wrap: wrap;
+      padding: 0 clamp(8px, 1.5vw, 12px);
+    }
+
+    .filter-label {
+      font-size: clamp(0.62rem, 1vw, 0.75rem);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-right: clamp(4px, 1vw, 8px);
+      white-space: nowrap;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      padding: clamp(7px, 1.5vw, 9px) clamp(16px, 2.5vw, 22px);
+      border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.7rem, 1vw, 0.8rem);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .filter-btn:hover { border-color: var(--green); color: var(--green); }
+    .filter-btn.active { background: var(--green); border-color: var(--green); color: #fff; }
+
+    /* ===== ALBUMS ===== */
+    .albums {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(48px, 8vw, 80px);
+    }
+
+    .album { animation: fadeUp 0.5s ease both; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .album-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-bottom: clamp(12px, 2vw, 16px);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: clamp(16px, 3vw, 28px);
+      gap: clamp(16px, 3vw, 24px);
+      flex-wrap: wrap;
+    }
+
+    .album-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .album-year-tag {
+      font-size: clamp(0.62rem, 1vw, 0.7rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .album h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .photo-count {
+      font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    /* ===== GRID ===== */
+    .photos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: clamp(6px, 1.5vw, 8px);
+      margin-bottom: clamp(16px, 2.5vw, 20px);
+    }
+
+    .photos-grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+      display: block;
+      border: none;
+    }
+
+    .photos-grid img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      filter: brightness(1.05);
+      z-index: 2;
+      position: relative;
+    }
+
+    .photos-grid img.extra { display: none; }
+
+    /* ===== TOGGLE BUTTON ===== */
+    .album-footer {
+      margin-top: clamp(12px, 2vw, 20px);
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 2vw, 16px);
+    }
+
+    .toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: clamp(9px, 1.5vw, 11px) clamp(18px, 2.5vw, 24px);
+      background: transparent;
+      border: 1px solid var(--green);
+      color: var(--green);
+      border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.7rem, 1vw, 0.8rem);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-btn:hover { background: var(--green); color: #fff; }
+    .toggle-btn .icon { font-size: 0.65rem; transition: transform 0.3s ease; }
+    .toggle-btn.expanded .icon { transform: rotate(180deg); }
+
+    /* ===== SPONSORS ===== */
+    .sponsors {
+      margin-top: clamp(48px, 8vw, 80px);
+      padding: clamp(32px, 5vw, 50px) 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .sponsors h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 700;
+      margin-bottom: clamp(4px, 1vw, 6px);
+    }
+
+    .sponsors-subtitle {
+      font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: clamp(24px, 4vw, 36px);
+    }
+
+    .sponsors-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(12px, 2.5vw, 20px);
+      justify-content: center;
+    }
+
+    .sponsor-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(100px, 20vw, 140px);
+      aspect-ratio: 1.4;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: clamp(8px, 1.5vw, 12px);
+      background: #fff;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .sponsor-card:hover { border-color: var(--green); box-shadow: 0 4px 16px rgba(46,139,87,0.1); }
+
+    .sponsor-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    #lightbox-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.93);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      cursor: zoom-out;
+      padding: clamp(12px, 3vw, 20px);
+    }
+
+    #lightbox-overlay img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 4px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+      pointer-events: none;
+      user-select: none;
+      object-fit: contain;
+      animation: zoomIn 0.25s ease;
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.94); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: clamp(12px, 2vw, 20px);
+      right: clamp(12px, 2vw, 28px);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      cursor: pointer;
+      width: clamp(38px, 8vw, 44px);
+      height: clamp(38px, 8vw, 44px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+      z-index: 10000;
+    }
+
+    .lightbox-close:hover { background: rgba(255,255,255,0.25); }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: clamp(12px, 2vw, 24px);
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.5);
+      font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      cursor: pointer;
+      width: clamp(40px, 8vw, 50px);
+      height: clamp(40px, 8vw, 50px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      z-index: 10000;
+    }
+
+    .nav-btn:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.4); }
+
+    #prev-btn { left: clamp(8px, 2vw, 24px); }
+    #next-btn { right: clamp(8px, 2vw, 24px); }
+
+    /* ===== FOOTER ===== */
+    .main-footer {
+      background: var(--green-deep);
+      color: var(--white);
+      padding: clamp(32px, 5vw, 48px) clamp(12px, 3vw, 1.5rem) clamp(16px, 2vw, 20px);
+      margin-top: auto;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(0.6rem, 1.5vw, 1rem);
+      margin-bottom: clamp(20px, 3vw, 32px);
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      color: rgba(255,255,255,0.7);
+      font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .social-icons a:hover {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+      text-decoration: none;
+    }
+    .social-icons a svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      display: block;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: clamp(16px, 3vw, 24px);
+      padding: 0 clamp(12px, 3vw, 1.5rem);
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-column h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+      margin-bottom: clamp(0.6rem, 1.5vw, 0.8rem);
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+
+    .footer-column p,
+    .footer-column li {
+      margin-bottom: 0.4rem;
+      font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+
+    .footer-column ul { list-style: none; padding: 0; }
+
+    .footer-column a {
+      color: rgba(255,255,255,0.75);
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover { color: var(--gold); text-decoration: none; }
+    .footer-column i { margin-right: 6px; color: var(--gold); font-size: clamp(0.7rem, 1.2vw, 0.8rem); }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: clamp(20px, 3vw, 32px);
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+      padding-left: clamp(12px, 3vw, 1.5rem);
+      padding-right: clamp(12px, 3vw, 1.5rem);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo" aria-label="Miss Sankofa Beauty Pageant — Home">
+      <img src="pictures/MISS SANKOFA LOGO.jpg" alt="Miss Sankofa Logo" class="logo-img" />
+      <span class="logo-text">Miss Sankofa</span>
+    </a>
+
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-navigation" class="nav-links" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="history.html">History</a>
+      <a href="vision.html">Vision</a>
+      <a href="organizers.html">About Us</a>
+      <a href="news.html">News</a>
+      <a href="form.html" class="btn-primary">Pick A Form</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="gallery-hero">
+    <div class="hero-overlay">
+      <p class="hero-eyebrow">Miss Sankofa Beauty Pageant</p>
+      <h1>Gallery</h1>
+      <p>Celebrating beauty, culture & confidence</p>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="gallery-filters" role="group" aria-label="Filter gallery by year">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" data-year="all">All</button>
+    <button class="filter-btn" data-year="2026">2026</button>
+    <button class="filter-btn" data-year="2025">2025</button>
+    <button class="filter-btn" data-year="2024">2024</button>
+  </div>
+
+  <!-- ALBUMS -->
+  <section class="albums" aria-label="Photo albums by year">
+
+    <!-- ==================== 2026 ==================== -->
+    <article class="album" data-year="2026" aria-label="Miss Sankofa 2026">
+      <div class="album-header">
+        <div class="album-meta">
+          <span class="album-year-tag">Edition</span>
+          <h2>Miss Sankofa 2026</h2>
+        </div>
+        <span class="photo-count">21 Photos</span>
+      </div>
+
+      <div class="photos-grid">
+
+        <!-- First 4 always visible -->
+        <img src="pictures/achiaa.jpg"    alt="Photo shoot day — Achiaa"   tabindex="0" />
+        <img src="pictures/adubea.jpg"    alt="Photo shoot day — Adubea"   tabindex="0" />
+        <img src="pictures/agyiewaa.jpg"  alt="Photo shoot day — Agyiewaa" tabindex="0" />
+        <img src="pictures/skyler.jpg"    alt="Photo shoot day — Skyler"   tabindex="0" />
+
+        <!-- Original extras -->
+        <img src="pictures/titi.jpg"          alt="Photo shoot day — Titi"          class="extra" tabindex="0" />
+        <img src="pictures/crowning1.jfif"    alt="Crowning ceremony 2026"           class="extra" tabindex="0" />
+        <img src="pictures/crowning 2.jfif"   alt="Winner crowning moment 2026"      class="extra" tabindex="0" />
+        <img src="pictures/skyler 2.jpg"      alt="Skyler backstage 2026"            class="extra" tabindex="0" />
+        <img src="pictures/adubea 2.jpg"      alt="Adubea on stage 2026"             class="extra" tabindex="0" />
+        <img src="pictures/agyeiwaa 2.jpg"    alt="Agyeiwaa on stage 2026"           class="extra" tabindex="0" />
+        <img src="pictures/achiaa 2.jpg"      alt="Achiaa on stage 2026"             class="extra" tabindex="0" />
+        <img src="pictures/titi 2.jpg"        alt="Titi on stage 2026"               class="extra" tabindex="0" />
+
+        <!-- New crowning night photos -->
+        <img src="crowning/IMG_2794.JPG"  alt="Sash presentation on stage 2026"       class="extra" tabindex="0" />
+        <img src="crowning/IMG_2796.JPG"  alt="Best Personality award 2026"           class="extra" tabindex="0" />
+        <img src="crowning/IMG_2806.JPG"  alt="2nd Runner-Up crowning 2026"           class="extra" tabindex="0" />
+        <img src="crowning/IMG_2811.JPG"  alt="Eloquent Model and Best Talent 2026"   class="extra" tabindex="0" />
+        <img src="crowning/IMG_2744.JPG"  alt="Contestant performing on stage 2026"   class="extra" tabindex="0" />
+        <img src="crowning/IMG_2775.JPG"  alt="Contestant in green gown 2026"         class="extra" tabindex="0" />
+        <img src="crowning/IMG_2776.JPG"  alt="Contestant in gold and white gown 2026" class="extra" tabindex="0" />
+        <img src="crowning/IMG_2782.JPG"  alt="Best Model receiving award 2026"       class="extra" tabindex="0" />
+        <img src="crowning/IMG_2789.JPG"  alt="Best Costume on stage 2026"            class="extra" tabindex="0" />
+
+      </div>
+
+      <div class="album-footer">
+        <button class="toggle-btn" aria-expanded="false">View All <span class="icon">&#9660;</span></button>
+      </div>
+    </article>
+
+    <!-- ==================== 2025 ==================== -->
+<article class="album" data-year="2025" aria-label="Miss Sankofa 2025">
+  <div class="album-header">
+    <div class="album-meta">
+      <span class="album-year-tag">Edition</span>
+      <h2>Miss Sankofa 2025</h2>
+    </div>
+    <span class="photo-count">12 Photos</span>
+  </div>
+  <div class="photos-grid">
+
+    <img src="pictures2025/winner.jpeg"
+         alt="Miss Nkwanta 2025 winner Maame Tawiah posing in kente gown and crown with Winner sash beside the golden throne" tabindex="0" />
+
+    <img src="pictures2025/1st runner up.jpeg"
+         alt="Miss Nkwanta 2025 1st Runner-Up Miss Adel in white ball gown with kente sash and tiara" tabindex="0" />
+
+    <img src="pictures2025/2nd runner up.jpeg"
+         alt="Miss Nkwanta 2025 2nd Runner-Up Miss Fabea posing on stage in red kente dress with tiara and sash" tabindex="0" />
+
+    <img src="pictures2025/queens.jpeg"
+         alt="Miss Nkwanta 2025 top four finalists — Best Talent, 1st Runner-Up, Winner seated on throne, and 2nd Runner-Up" tabindex="0" />
+
+    <img src="pictures2025/winner crowning.jpeg"
+         alt="Outgoing Miss Nkwanta queen placing the Winner sash on Maame Tawiah at the 2025 Beauty Pageant" tabindex="0" class="extra" />
+
+    <img src="pictures2025/winnercrowning.jpeg"
+         alt="Crowning moment as the outgoing queen places the tiara on winner Maame Tawiah at Miss Nkwanta 2025" tabindex="0" class="extra" />
+
+    <img src="pictures2025/1st runner up crowning.jpeg"
+         alt="1st Runner-Up Miss Adel being crowned on stage at Miss Nkwanta 2025" tabindex="0" class="extra" />
+
+    <img src="pictures2025/2nd runner up crowning.jpeg"
+         alt="2nd Runner-Up Miss Fabea receiving her crown on stage at Miss Nkwanta 2025" tabindex="0" class="extra" />
+
+    <img src="pictures2025/queens2.jpeg"
+         alt="Winner Maame Tawiah and outgoing Miss Nkwanta queen sharing a warm embrace on stage after crowning" tabindex="0" class="extra" />
+
+    <img src="pictures2025/winner cash prize.jpeg"
+         alt="Winner Maame Tawiah presenting her GH₵2,000 prize cheque alongside a microwave and minibar at Miss Nkwanta 2025" tabindex="0" class="extra" />
+
+    <img src="pictures2025/1st runner up cash prize.jpeg"
+         alt="Miss Adel receiving her GH₵3,000 prize cheque as 1st Runner-Up at Miss Nkwanta 2025 Beauty Pageant" tabindex="0" class="extra" />
+
+    <img src="pictures2025/2nd runner up cash prize.jpeg"
+         alt="Miss Fabea holding her GH₵2,000 prize cheque as 2nd Runner-Up at Miss Nkwanta 2025 Beauty Pageant" tabindex="0" class="extra" />
+
+  </div>
+  <div class="album-footer">
+    <button class="toggle-btn" aria-expanded="false">View All <span class="icon">&#9660;</span></button>
+  </div>
+</article>
+
+    <!-- ==================== 2024 ==================== -->
+    <article class="album" data-year="2024" aria-label="Miss Sankofa 2024">
+      <div class="album-header">
+        <div class="album-meta">
+          <span class="album-year-tag">Edition</span>
+          <h2>Miss Sankofa 2024</h2>
+        </div>
+        <span class="photo-count">6 Photos</span>
+      </div>
+      <div class="photos-grid">
+        <img src="pictures/ADEL.webp"    alt="Contestants on stage 2024"  tabindex="0" />
+        <img src="images/2024_2.jpg"     alt="Crowd at 2024 event"        tabindex="0" />
+        <img src="images/2024_3.jpg"     alt="Crowning moment 2024"       tabindex="0" />
+        <img src="images/2024_4.jpg"     alt="Talent performance 2024"    tabindex="0" />
+        <img src="images/2024_5.jpg"     alt="Backstage 2024"             class="extra" tabindex="0" />
+        <img src="pictures/KYEDEA.webp"  alt="Talent performance 2024"    class="extra" tabindex="0" />
+      </div>
+      <div class="album-footer">
+        <button class="toggle-btn" aria-expanded="false">View All <span class="icon">&#9660;</span></button>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <section class="sponsors" aria-labelledby="sponsors-heading">
+    <h2 id="sponsors-heading">Our Sponsors</h2>
+    <p class="sponsors-subtitle">Partners in excellence</p>
+    <div class="sponsors-logos">
+      <div class="sponsor-card">
+        <img src="sponsors/tklogo.jpeg"  alt="Sponsor partner" />
+      </div>
+      <div class="sponsor-card">
+        <img src="sponsors/SPONSOR.jpg"  alt="Sponsor partner" />
+      </div>
+      <div class="sponsor-card">
+        <img src="sponsors/akomapalogo.jpeg"  alt="Sponsor partner" />
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="social-icons">
+      <a href="https://wa.me/+233543834637" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+      <a href="https://www.tiktok.com/@misssankofa_" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="https://www.facebook.com/people/Miss-Sankofa-Beauty-Pageant/100075938831397/?locale=en_GB#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+      <a href="https://www.instagram.com/_misssankofa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+    </div>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="history.html">The Pageant</a></li>
+        <li><a href="organizers.html">Team</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i>misssankofa25@gmail.com</p>
+      <p><i class="fas fa-phone"></i>+233 54 383 4637</p>
+      <p><i class="fab fa-whatsapp"></i>+233 554 007 025</p>
+      <p><i class="fab fa-whatsapp"></i>+233 540 498 922</p>
+    </div>
+    <div class="footer-column">
+      <h3>Location</h3>
+      <p><i class="fas fa-map-marker-alt"></i>P.O. Box 46</p>
+      <p>Donkro Nkwanta, Ghana</p>
+      <a href="https://www.google.com/maps/place/Donkronkwanta/" target="_blank" rel="noopener noreferrer">Map</a>
+    </div>
+    <div class="footer-column">
+      <h3>Links</h3>
+      <ul>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="form.html">Apply</a></li>
+        <li><a href="vision.html">Vision</a></li>
+              <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Miss Sankofa Beauty Pageant. All rights reserved.</p>
+    <p>Designed and developed by Youngster's Web Studios</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
+  <button class="lightbox-close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+  <button id="prev-btn" class="nav-btn" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+  <img src="" alt="Expanded gallery image" />
+  <button id="next-btn" class="nav-btn" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<script>
+
+  // ── Hamburger ──────────────────────────────────
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.getElementById('primary-navigation');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ── Year filter ────────────────────────────────
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const albums = document.querySelectorAll('.album');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const year = btn.getAttribute('data-year');
+      albums.forEach(album => {
+        const show = year === 'all' || album.getAttribute('data-year') === year;
+        album.style.display = show ? 'block' : 'none';
+        album.style.animation = show ? 'fadeUp 0.4s ease both' : 'none';
+      });
+    });
+  });
+
+  // ── View All / Show Less toggle ────────────────
+  document.querySelectorAll('.album').forEach(album => {
+    const btn    = album.querySelector('.toggle-btn');
+    const extras = album.querySelectorAll('.extra');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.classList.toggle('expanded');
+      btn.setAttribute('aria-expanded', expanded);
+      extras.forEach(img => {
+        img.style.display = expanded ? 'block' : 'none';
+      });
+      btn.innerHTML = expanded
+        ? 'Show Less <span class="icon">&#9660;</span>'
+        : 'View All <span class="icon">&#9660;</span>';
+    });
+  });
+
+  // ── Lightbox ───────────────────────────────────
+  const overlay    = document.getElementById('lightbox-overlay');
+  const lightboxImg = overlay.querySelector('img');
+  const counter    = document.getElementById('lightbox-counter');
+  const allImgs    = Array.from(document.querySelectorAll('.photos-grid img'));
+  let currentIdx   = -1;
+
+  function openLightbox(img) {
+    currentIdx = allImgs.indexOf(img);
+    updateLightbox();
+    overlay.style.display = 'flex';
+    overlay.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function updateLightbox() {
+    const img = allImgs[currentIdx];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    counter.textContent = `${currentIdx + 1} / ${allImgs.length}`;
+  }
+
+  function closeLightbox() {
+    overlay.style.display = 'none';
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  allImgs.forEach(img => {
+    img.addEventListener('click', () => openLightbox(img));
+    img.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img); }
+    });
+  });
+
+  document.getElementById('next-btn').addEventListener('click', e => {
+    e.stopPropagation();
+    currentIdx = (currentIdx + 1) % allImgs.length;
+    updateLightbox();
+  });
+
+  document.getElementById('prev-btn').addEventListener('click', e => {
+    e.stopPropagation();
+    currentIdx = (currentIdx - 1 + allImgs.length) % allImgs.length;
+    updateLightbox();
+  });
+
+  document.querySelector('.lightbox-close').addEventListener('click', e => {
+    e.stopPropagation();
+    closeLightbox();
+  });
+
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
+
+  document.addEventListener('keydown', e => {
+    if (overlay.style.display !== 'flex') return;
+    if (e.key === 'Escape')       closeLightbox();
+    else if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % allImgs.length; updateLightbox(); }
+    else if (e.key === 'ArrowLeft')  { currentIdx = (currentIdx - 1 + allImgs.length) % allImgs.length; updateLightbox(); }
+  });
+
+</script>
+
+</body>
+</html>
